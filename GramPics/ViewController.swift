@@ -10,6 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: Outlets
+    @IBOutlet weak var refreshBtn: UIButton!
+    @IBOutlet weak var logInBtn: UIButton!
+    @IBOutlet weak var logOutBtn: UIButton!
+    @IBOutlet weak var imageIV: UIImageView!
+    
+    
+    // MARK: Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,5 +29,12 @@ class ViewController: UIViewController {
     }
 
 
+    // MARK: Button Pressed Methods
+    @IBAction func refreshBtnPressed(sender: AnyObject) {
+    }
+    @IBAction func logOutBtnPressed(sender: AnyObject) {
+    }
+    @IBAction func logInBtnPressed(sender: AnyObject) {
+    }
 }
 
