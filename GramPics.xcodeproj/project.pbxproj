@@ -16,6 +16,7 @@
 		49D1DECA1BE6FE7B004CEBA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D1DEC81BE6FE7B004CEBA1 /* LaunchScreen.storyboard */; };
 		49D1DED51BE6FE7B004CEBA1 /* GramPicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1DED41BE6FE7B004CEBA1 /* GramPicsTests.swift */; };
 		49D1DEE01BE6FE7B004CEBA1 /* GramPicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1DEDF1BE6FE7B004CEBA1 /* GramPicsUITests.swift */; };
+		49D73E121BE7C48000329670 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D73E111BE7C48000329670 /* SwiftyJSON.swift */; };
 		5553F246C51F540181AE2938 /* libPods-GramPics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF93D0935F54913D3B4C2559 /* libPods-GramPics.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		49D1DEDB1BE6FE7B004CEBA1 /* GramPicsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GramPicsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D1DEDF1BE6FE7B004CEBA1 /* GramPicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GramPicsUITests.swift; sourceTree = "<group>"; };
 		49D1DEE11BE6FE7B004CEBA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49D73E111BE7C48000329670 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		7176485CC0CDF967E5083022 /* Pods-GramPics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GramPics.release.xcconfig"; path = "Pods/Target Support Files/Pods-GramPics/Pods-GramPics.release.xcconfig"; sourceTree = "<group>"; };
 		DF93D0935F54913D3B4C2559 /* libPods-GramPics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GramPics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 		49D1DEBB1BE6FE7B004CEBA1 /* GramPics */ = {
 			isa = PBXGroup;
 			children = (
+				49D73E111BE7C48000329670 /* SwiftyJSON.swift */,
 				491D25C51BE704CA003C2FAF /* Supporting Files */,
 				49D1DEBC1BE6FE7B004CEBA1 /* AppDelegate.swift */,
 				49D1DEBE1BE6FE7B004CEBA1 /* ViewController.swift */,
@@ -354,6 +357,7 @@
 				49D1DEBF1BE6FE7B004CEBA1 /* ViewController.swift in Sources */,
 				49D1DEBD1BE6FE7B004CEBA1 /* AppDelegate.swift in Sources */,
 				49D1DEC51BE6FE7B004CEBA1 /* GramPics.xcdatamodeld in Sources */,
+				49D73E121BE7C48000329670 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

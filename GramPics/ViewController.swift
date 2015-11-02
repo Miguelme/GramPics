@@ -7,10 +7,9 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
 
-    let FEED_URL = "https://api.instagram.com/v1/users/self/feed?access_token=ACCESS-TOKEN"
+    let FEED_URL = "https://api.instagram.com/v1/users/self/feed?access_token="
     // MARK: Outlets
     @IBOutlet weak var refreshBtn: UIButton!
     @IBOutlet weak var logInBtn: UIButton!
@@ -68,14 +67,35 @@ class ViewController: UIViewController {
             }
 
         
+           
+           
+            let json = JSON(data: data!)
+            let imageURLStr = (json["data"][0]["images"]["standard_resolution"]["url"]).stringValue
+            print("IMAGEurlsTR \(imageURLStr)")
+            let imageURL = NSURL(string: imageURLStr)
+            print("imageURL \(imageURL)")
+            urlSession.dataTaskWithURL(imageURL!, completionHandler: {
+                data, response, error in
+                
+                // Network Error
+                if (error != nil) {
+                    print("Couldn't finish request because error = \(error)")
+                    return
+                }
+                
+                // Http Error
+                let httpResp : NSHTTPURLResponse = response as! NSHTTPURLResponse
+                if httpResp.statusCode < 200 || httpResp.statusCode >= 300 {
+                    print("Error because status code is \(httpResp.statusCode)")
+                    return
+                }
+                
+                dispatch_async(dispatch_get_main_queue()){
+                    self.imageIV.image = UIImage(data: data!)
+                }
+
             
-            // Parse Error
-            do {
-                let pkg = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-            }catch {
-                print("Exception has been thrown")
-            }
-            
+            }).resume()
             
         }).resume()
         
@@ -85,10 +105,11 @@ class ViewController: UIViewController {
     @IBAction func logOutBtnPressed(sender: AnyObject) {
         let sharedStore : NXOAuth2AccountStore = NXOAuth2AccountStore.sharedStore() as! NXOAuth2AccountStore
         let accounts = sharedStore.accountsWithAccountType("Instagram")
+   
         for account in accounts {
+            print("Remove account \(account)")
             sharedStore.removeAccount(account as! NXOAuth2Account)
         }
-        
         
         self.logInBtn.enabled = true
         self.logOutBtn.enabled = false
