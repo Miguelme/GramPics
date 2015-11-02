@@ -16,10 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        let sharedStore : NXOAuth2AccountStore = NXOAuth2AccountStore.sharedStore() as! NXOAuth2AccountStore
+        sharedStore.setClientID("6ac7024186a345d59c7bf39f20b7eeb8", secret: "221adf39e08d473aa584c6c8d13f32e0", authorizationURL: NSURL(string: "https://api.instagram.com/oauth/authorize"), tokenURL: NSURL(string: "https://api.instagram.com/oauth/access_token"), redirectURL: NSURL(string:"grampics://authenticated"), forAccountType: "Instagram")  
+        
         // Override point for customization after application launch.
         return true
     }
 
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        print("Received from instagram")
+        let sharedStore : NXOAuth2AccountStore = NXOAuth2AccountStore.sharedStore() as! NXOAuth2AccountStore
+        return sharedStore.handleRedirectURL(url)
+        
+    }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

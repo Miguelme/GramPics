@@ -39,6 +39,7 @@
 /* Begin PBXFileReference section */
 		1356D4893C8672458871AA44 /* Pods-GramPics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GramPics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GramPics/Pods-GramPics.debug.xcconfig"; sourceTree = "<group>"; };
 		491D25C31BE704C6003C2FAF /* Silhouette.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Silhouette.jpg; sourceTree = "<group>"; };
+		491D25C61BE70F67003C2FAF /* GramPics-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GramPics-Bridging-Header.h"; sourceTree = "<group>"; };
 		49D1DEB91BE6FE7B004CEBA1 /* GramPics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GramPics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D1DEBC1BE6FE7B004CEBA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49D1DEBE1BE6FE7B004CEBA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 				49D1DEC81BE6FE7B004CEBA1 /* LaunchScreen.storyboard */,
 				49D1DECB1BE6FE7B004CEBA1 /* Info.plist */,
 				49D1DEC31BE6FE7B004CEBA1 /* GramPics.xcdatamodeld */,
+				491D25C61BE70F67003C2FAF /* GramPics-Bridging-Header.h */,
 			);
 			path = GramPics;
 			sourceTree = "<group>";
@@ -494,10 +496,13 @@
 			baseConfigurationReference = 1356D4893C8672458871AA44 /* Pods-GramPics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GramPics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VenezuelanTech.GramPics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GramPics/GramPics-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -506,10 +511,12 @@
 			baseConfigurationReference = 7176485CC0CDF967E5083022 /* Pods-GramPics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GramPics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VenezuelanTech.GramPics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GramPics/GramPics-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let FEED_URL = "https://api.instagram.com/v1/users/self/feed?access_token=ACCESS-TOKEN"
     // MARK: Outlets
     @IBOutlet weak var refreshBtn: UIButton!
     @IBOutlet weak var logInBtn: UIButton!
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
     // MARK: Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+     
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -35,6 +37,8 @@ class ViewController: UIViewController {
     @IBAction func logOutBtnPressed(sender: AnyObject) {
     }
     @IBAction func logInBtnPressed(sender: AnyObject) {
+        let sharedStore : NXOAuth2AccountStore = NXOAuth2AccountStore.sharedStore() as! NXOAuth2AccountStore
+        sharedStore.requestAccessToAccountWithType("Instagram")
     }
 }
 
